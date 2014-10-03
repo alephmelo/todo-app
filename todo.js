@@ -62,8 +62,12 @@ angular.module('todo', ['ionic','todo.services'])
 	  subTitle: 'Digite nova tarefa',
     cancelText: 'Cancelar',
 	}).then(function(res) {
+    if(res) {
 		SQLService.edit(res, taskid);
 		$scope.loadTask();
+    } else {
+      $scope.loadTask();
+    }
 	});
   };
   
