@@ -11,6 +11,11 @@ angular.module('todo', ['ionic','todo.services'])
 	}
 
 	$scope.loadTask(); 
+  function ContentController($scope, $ionicSideMenuDelegate) {
+  $scope.toggleLeft = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
+}
 
   // Create and load the Modal
   $ionicModal.fromTemplateUrl('new-task.html', function(modal) {
@@ -61,6 +66,7 @@ angular.module('todo', ['ionic','todo.services'])
 	  title: 'Atualizar Tarefa',
 	  subTitle: 'Digite nova tarefa',
     cancelText: 'Cancelar',
+    inputPlaceholder: 'Atualize sua tarefa'
 	}).then(function(res) {
     if(res) {
 		SQLService.edit(res, taskid);
