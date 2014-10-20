@@ -27,10 +27,10 @@
 			</div>
 			<ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
 				<ion-item ng-show="!tasks.length">
-					Nenhuma tarefa <3
+					<p>Nenhuma tarefa <3 </p>
 			  	</ion-item>
 				<ion-item ng-show="tasks.length" ng-repeat="task in tasks |filter:searchText" item="task">
-					{{task.task_name}}
+					<p>{{task.task_name}}</p>
 					<ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(task.task_id)"></ion-delete-button>
 					<ion-option-button class="button-assertive" ng-click="onItemEdit(task.task_id)">Edit</ion-option-button>
 					<ion-reorder-button class="ion-navicon" on-reoder="moveItem(task.task_id, fromIndex, toIndex)"></ion-reorder-button>
