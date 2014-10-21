@@ -66,7 +66,7 @@ angular.module('todo', ['ionic','todo.services'])
 	  title: 'Atualizar Tarefa',
 	  subTitle: 'Digite nova tarefa',
     cancelText: 'Cancelar',
-    inputPlaceholder: 'Atualizar tarefa',
+    template:'<input ng-model="data.response" type="text" autofocus="true" placeholder="Atualizar tarefa">'
 	}).then(function(res) {
     if(res) {
 		SQLService.edit(res, taskid);
