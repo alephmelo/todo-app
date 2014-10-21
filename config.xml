@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget
         id          = "com.todoapp"
-        version     = "1.0.3" >
+        version     = "1.0.4" >
     <!-- versionCode is optional and Android only -->
     <name>Todo App</name>
     <description>
