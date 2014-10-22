@@ -1,21 +1,15 @@
-angular.module('todo', ['ionic','todo.services'])
-
-.controller('TodoCtrl', function($scope, $ionicModal, $ionicPopup, SQLService) {
+var app = angular.module("todo", ['ionic','todo.services'])
+  app.controller("TodoCtrl", function($scope, $ionicModal, $ionicPopup, SQLService) {
   
-	SQLService.setup();
-		
-	$scope.loadTask = function() {
-		SQLService.all().then(function (results) {
-			$scope.tasks = results;
-		});	
-	}
+  SQLService.setup();
+    
+  $scope.loadTask = function() {
+    SQLService.all().then(function (results) {
+      $scope.tasks = results;
+    }); 
+  }
 
-	$scope.loadTask(); 
-  function ContentController($scope, $ionicSideMenuDelegate) {
-  $scope.toggleLeft = function() {
-    $ionicSideMenuDelegate.toggleLeft();
-  };
-}
+  $scope.loadTask(); 
 
   // Create and load the Modal
   $ionicModal.fromTemplateUrl('new-task.html', function(modal) {
@@ -24,6 +18,12 @@ angular.module('todo', ['ionic','todo.services'])
     scope: $scope,
     animation: 'slide-in-up'
   });
+
+  $scope.searchText = "";
+
+  $scope.clearSearch = function () {
+      $scope.searchText = "";
+  }; 
   $scope.about = function() {
    var alertPopup = $ionicPopup.alert({
      title: 'Follow me on Twitter && Github.',

@@ -18,13 +18,21 @@
 			<button class="button button-icon ion-arrow-move"
 	          ng-click="data.showDelete = false; data.showReorder = !data.showReorder"></button>
 		</ion-header-bar>
-		<ion-content>
-			<div class="bar bar-header item-input-inset">
-				<label class="item-input-wrapper">
+
+		<ion-content ng-controller="TodoCtrl">
+				<ion-search class="search-wrapper-light has-header" placeholder="Search a user" min-length="1" model="users" source="getUsersByName(str)">
+			<div class="item-input-inset" ng-app="app">
+				<label class="item-input-wrapper item item-input">
 					<i class="icon ion-ios7-search placeholder-icon"></i>
-					<input type="search" placeholder="Pesquisar" ng-model="searchText">
+					<input type="search" placeholder="Pesquisar" class="form-control" data-ng-model="searchText">
 				</label>
+			    <a class="clear" href="" data-ng-click="clearSearch()">
+			    	<button class="button button-clear">
+						Cancel
+					</button>
+			    </a>
 			</div>
+		</ion-search>
 			<ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
 				<ion-item ng-show="!tasks.length">
 					<p>Nenhuma tarefa <3 </p>
