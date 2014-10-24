@@ -9,8 +9,9 @@
 		<script src="todo.js"></script>
 		<script src="todo-services.js"></script>
 	</head>
-  
-	<body ng-app="todo" ng-controller="TodoCtrl">
+<body>
+<div id="wrapper" ng-app="todo">
+	<div id="wrapperCont" ng-controller="TodoCtrl">
 		<ion-header-bar class="bar-positive">
 			<button class="button button-icon icon ion-ios7-minus-outline" 
 	          ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
@@ -18,12 +19,13 @@
 			<button class="button button-icon ion-arrow-move"
 	          ng-click="data.showDelete = false; data.showReorder = !data.showReorder"></button>
 		</ion-header-bar>
-		<ion-content>
-			<div class="bar bar-header item-input-inset">
-				<label class="item-input-wrapper">
+		<ion-content ng-controller="searchCtrl">
+			<div  class="item-input-inset">
+				<label class="item-input-wrapper item item-input">
 					<i class="icon ion-ios7-search placeholder-icon"></i>
-					<input type="search" placeholder="Pesquisar" ng-model="searchText">
+					<input type="search" placeholder="Pesquisar" class="form-control" ng-model="searchText">
 				</label>
+			    	<button ng-click="clearSearch()" class="button button-clear">Apagar</button>
 			</div>
 			<ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
 				<ion-item ng-show="!tasks.length">
@@ -37,7 +39,6 @@
 				</ion-item>
 			</ion-list>
 		</ion-content>
-
 		<script id="new-task.html" type="text/ng-template">
 			<div class="modal">
 				<ion-header-bar class="bar-stable">
@@ -68,5 +69,7 @@
 				<i class="ion-social-github"></i>
 			</button>
 		</ion-footer-bar>
+	</div>
+	</div>
 	</body>
 </html>
