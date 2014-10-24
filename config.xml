@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget
         id          = "com.todoapp"
-        version     = "1.0.3" >
+        version     = "1.0.4" >
     <!-- versionCode is optional and Android only -->
     <name>Todo App</name>
     <description>
@@ -13,6 +13,9 @@
     </author>
     <preference name="permissions" value="none"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
+    <preference name="android-minSdkVersion" value="10" />
+    <preference name="android-maxSdkVersion" value="21" />
+    <preference name="fullscreen" value="true" />
     <!--
       If you do not want any permissions to be added to your app, add the
       following tag to your config.xml; you will still have the INTERNET
