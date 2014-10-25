@@ -21,11 +21,11 @@
 		</ion-header-bar>
 		<ion-content ng-controller="searchCtrl">
 			<div  class="item-input-inset">
-				<label class="item-input-wrapper item item-input">
+				<div class="item-input-wrapper item item-input">
 					<i class="icon ion-ios7-search placeholder-icon"></i>
 					<input type="search" placeholder="Pesquisar" class="form-control" ng-model="searchText">
-				</label>
-			    	<button ng-click="clearSearch()" ng-show="searchText.length" class="button button-clear">Apagar</button>
+			    	<button ng-click="clearSearch()" ng-show="searchText.length" class="button button-icon ion-ios7-close input-button"></button>
+				</div>
 			</div>
 			<ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
 				<ion-item ng-show="!tasks.length">
