@@ -19,12 +19,12 @@
 			<button class="button button-icon ion-arrow-move"
 	          ng-click="data.showDelete = false; data.showReorder = !data.showReorder"></button>
 		</ion-header-bar>
-		<ion-content ng-controller="searchCtrl">
-			<div  class="item-input-inset">
-				<div class="item-input-wrapper item item-input">
+		<ion-content start-y="55" ng-controller="searchCtrl">
+			<div class="bar bar-header item-input-inset">
+				<div class="item-input-wrapper">
 					<i class="icon ion-ios7-search placeholder-icon"></i>
 					<input type="search" placeholder="Pesquisar" class="form-control" ng-model="searchText">
-			    	<button ng-click="clearSearch()" ng-show="searchText.length" class="button button-icon ion-ios7-close input-button"></button>
+			    	<i ng-click="clearSearch()" ng-show="searchText.length" class="ion-ios7-close-outline pull-right"></i>
 				</div>
 			</div>
 			<ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
